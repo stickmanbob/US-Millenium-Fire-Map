@@ -4,12 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./bundle.js"></script>
+    
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="../assets/stylesheets/map.css">
 </head>
 <body>
     
-    <div id="map"> </div>
+    <header>
+        <h1>Fire in the New Millenium</h1>
+    </header>
+
+    <section class="main-content">
+        <div class="map-control-container">
+
+            <div>
+                <label for="">
+                    <input type="date">
+                </label>
+            </div>
+            <div>
+                <h2 id="map-date">Year: </h2>
+                <div id="map"> </div>
+            </div>
+        </div>
+
+    </section>
+    
 </body>
+<script src="./bundle.js"></script>
 </html>

@@ -18,10 +18,12 @@
         <div class="map-control-container">
 
             <div>
-                <label for="">
-                    <input type="date">
-                </label>
+                <div class="slidecontainer">
+                    <input type="range" min="2000" max="2018" value="2000" class="slider" id="yearSlider">
+                    <p>Year: <span id="sliderPos"></span></p>
+                </div>
             </div>
+            
             <div>
                 <h2 id="map-date">Year: </h2>
                 <div id="map"> </div>

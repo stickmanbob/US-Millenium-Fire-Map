@@ -127,18 +127,27 @@ map = new mapboxgl.Map({
 map.on('load', function () {
   map.addSource('fire-tiles', {
     type: 'vector',
-    url: 'mapbox://stickmanbob.0cueslda'
+    url: 'mapbox://stickmanbob.abjj02xe'
   });
   map.addLayer({
     'id': 'fire-data',
     'source': 'fire-tiles',
-    "source-layer": "Historic_GeoMAC_Perimeters_Al-7h297a",
+    "source-layer": "FirePerimeters-2000-2018-4m870d",
     "type": "fill",
     "paint": {
       "fill-color": "#e38885"
-    }
+    },
+    filter: ['==', ['number', ['get', 'fireyear']], 2018]
   });
 });
+var yearSlider = document.getElementById("yearSlider");
+var sliderPos = document.getElementById("sliderPos");
+sliderPos.innerHTML = yearSlider.value;
+
+yearSlider.oninput = function () {
+  sliderPos.innerHTML = this.value;
+  map.setFilter('fire-data', ['==', ['number', ['get', 'fireyear']], Number.parseInt(this.value)]);
+};
 
 /***/ }),
 

@@ -153,7 +153,12 @@ yearSlider.oninput = function () {
     sliderPos.innerHTML = this.value;
     map.setFilter('fire-data', ['==', ['number', ['get', 'fireyear']], Number.parseInt(this.value)]);
   }
-}; //  // Test function to log map center and zoom on zoom change 
+};
+
+map.on("click", "fire-data", function (e) {
+  var name = e.features[0].properties.incidentna;
+  new mapboxgl.Popup().setLngLat(e.lngLat).setHTML(name).addTo(map);
+}); //  // Test function to log map center and zoom on zoom change 
 // map.on("zoomend",function() {
 //     console.log("zoom", map.getZoom()); 
 //     console.log("center", map.getCenter())

@@ -1,4 +1,29 @@
 #map {
     height: 700px;
-    width: 800px;
+    width: 100%px;
 }
+
+.main-content{
+    padding: 10px 30px;
+}
+
+.map-content-container {
+    display: flex;
+}
+
+.map-sidebar{
+    padding: 5px 10px; 
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.map-container{
+    width: 100%;
+}
+
+header{
+    text-align: center;
+}
+

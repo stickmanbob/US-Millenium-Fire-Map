@@ -142,17 +142,22 @@ map.on('load', function () {
 });
 var yearSlider = document.getElementById("yearSlider");
 var sliderPos = document.getElementById("sliderPos");
-sliderPos.innerHTML = yearSlider.value;
+sliderPos.innerHTML = "All Years";
 
 yearSlider.oninput = function () {
-  sliderPos.innerHTML = this.value;
-  map.setFilter('fire-data', ['==', ['number', ['get', 'fireyear']], Number.parseInt(this.value)]);
-};
-
-map.on("zoomend", function () {
-  console.log("zoom", map.getZoom());
-  console.log("center", map.getCenter());
-});
+  if (this.value === "1999") {
+    sliderPos.innerHTML = "All Years";
+    map.setFilter('fire-data', null);
+    console.log("set");
+  } else {
+    sliderPos.innerHTML = this.value;
+    map.setFilter('fire-data', ['==', ['number', ['get', 'fireyear']], Number.parseInt(this.value)]);
+  }
+}; //  // Test function to log map center and zoom on zoom change 
+// map.on("zoomend",function() {
+//     console.log("zoom", map.getZoom()); 
+//     console.log("center", map.getCenter())
+// })
 
 /***/ }),
 

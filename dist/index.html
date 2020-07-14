@@ -15,17 +15,19 @@
     </header>
 
     <section class="main-content">
-        <div class="map-control-container">
+        <div class="map-content-container">
 
-            <div>
+            <div class="map-sidebar">
+
+                <p>Use the slider to display fires from different years</p>
+
                 <div class="slidecontainer">
-                    <input type="range" min="2000" max="2018" value="2000" class="slider" id="yearSlider">
+                    <input type="range" min="1999" max="2018" value="1999" class="slider" id="yearSlider">
                     <p>Year: <span id="sliderPos"></span></p>
                 </div>
             </div>
             
-            <div>
-                <h2 id="map-date">Year: </h2>
+            <div class="map-container">
                 <div id="map"> </div>
             </div>
         </div>

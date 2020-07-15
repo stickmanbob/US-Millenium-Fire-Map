@@ -180,7 +180,19 @@ yearSlider.oninput = function () {
 
 var selectedFireId;
 map.on('mouseenter', 'fire-data', function (e) {
-  map.getCanvas().style.cursor = 'pointer'; // Add hover effect to current feature
+  map.getCanvas().style.cursor = 'pointer';
+});
+map.on('mousemove', 'fire-data', function (e) {
+  if (selectedFireId) {
+    map.setFeatureState({
+      source: "fire-tiles",
+      sourceLayer: "Fire_perimeters_20002018",
+      id: selectedFireId
+    }, {
+      hover: false
+    });
+  } // Add hover effect to current feature
+
 
   selectedFireId = e.features[e.features.length - 1].id;
   map.setFeatureState({
@@ -204,6 +216,8 @@ map.on('mouseleave', 'fire-data', function () {
       hover: false
     });
   }
+
+  selectedFireId = null;
 }); // Display a popup when a fire is clicked on
 
 map.on("click", "fire-data", function (e) {

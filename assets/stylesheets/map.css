@@ -27,3 +27,7 @@ header{
     text-align: center;
 }
 
+.mapboxgl-popup-content {
+    display: flex;
+    flex-direction: column;
+}

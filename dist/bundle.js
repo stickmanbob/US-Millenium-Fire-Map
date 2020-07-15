@@ -153,11 +153,22 @@ yearSlider.oninput = function () {
     sliderPos.innerHTML = this.value;
     map.setFilter('fire-data', ['==', ['number', ['get', 'fireyear']], Number.parseInt(this.value)]);
   }
-};
+}; // Change cursor when hovering on a fire
+
+
+map.on('mouseenter', 'fire-data', function () {
+  map.getCanvas().style.cursor = 'pointer';
+}); // Change it back on mouse leave
+
+map.on('mouseleave', 'fire-data', function () {
+  map.getCanvas().style.cursor = '';
+}); // Display a popup when a fire is clicked on
 
 map.on("click", "fire-data", function (e) {
   var name = e.features[0].properties.incidentna;
-  new mapboxgl.Popup().setLngLat(e.lngLat).setHTML(name).addTo(map);
+  var acres = Number.parseInt(e.features[0].properties.gisacres).toLocaleString();
+  var agency = e.features[0].properties.agency;
+  new mapboxgl.Popup().setLngLat(e.lngLat).setHTML("<span> <strong>Incident Name:</strong> ".concat(name, " </span>\n                    <span> <strong>Acres: </strong> ").concat(acres, " </span>\n                    <span> <strong>Agency:</strong> ").concat(agency, " </span>")).addTo(map);
 }); //  // Test function to log map center and zoom on zoom change 
 // map.on("zoomend",function() {
 //     console.log("zoom", map.getZoom()); 

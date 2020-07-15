@@ -182,7 +182,7 @@ var selectedFireId;
 map.on('mouseenter', 'fire-data', function (e) {
   map.getCanvas().style.cursor = 'pointer'; // Add hover effect to current feature
 
-  selectedFireId = e.features[0].id;
+  selectedFireId = e.features[e.features.length - 1].id;
   map.setFeatureState({
     source: 'fire-tiles',
     "sourceLayer": "Fire_perimeters_20002018",
@@ -207,19 +207,18 @@ map.on('mouseleave', 'fire-data', function () {
 }); // Display a popup when a fire is clicked on
 
 map.on("click", "fire-data", function (e) {
-  var name = e.features[0].properties.incidentna;
-  var acres = Number.parseInt(e.features[0].properties.gisacres).toLocaleString();
-  var agency = e.features[0].properties.agency;
-  var year = e.features[0].properties.fireyear;
-  var fireid = e.features[0].properties.uniquefire;
-  console.log(e.features[0]);
+  var name = e.features[e.features.length - 1].properties.incidentna;
+  var acres = Number.parseInt(e.features[e.features.length - 1].properties.gisacres).toLocaleString();
+  var agency = e.features[e.features.length - 1].properties.agency;
+  var year = e.features[e.features.length - 1].properties.fireyear;
+  var fireid = e.features[e.features.length - 1].properties.uniquefire;
   new mapboxgl.Popup().setLngLat(e.lngLat).setHTML("<span> <strong>Incident Name:</strong> ".concat(name, " </span>\n                    <span> <strong>Fire ID:</strong> ").concat(fireid, " </span>\n                    <span> <strong>Acres: </strong> ").concat(acres, " </span>\n                    <span> <strong>Agency:</strong> ").concat(agency, " </span>\n                    <span> <strong>Year:</strong> ").concat(year, " </span>")).addTo(map);
-}); // Test function to log map center and zoom on zoom change 
-
-map.on("zoomend", function () {
-  console.log("zoom", map.getZoom());
-  console.log("center", map.getCenter());
-}); //Collapse the sidebar
+}); // // Test function to log map center and zoom on zoom change 
+// map.on("zoomend", function () {
+//     console.log("zoom", map.getZoom());
+//     console.log("center", map.getCenter())
+// })
+//Collapse the sidebar
 
 /***/ }),
 

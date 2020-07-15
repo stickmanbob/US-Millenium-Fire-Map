@@ -129,7 +129,8 @@ map = new mapboxgl.Map({
 map.on('load', function () {
   map.addSource('fire-tiles', {
     type: 'vector',
-    url: 'mapbox://stickmanbob.0fos1j90'
+    url: 'mapbox://stickmanbob.0fos1j90',
+    "promoteId": "OBJECTID"
   });
   map.addLayer({
     'id': 'fire-data',
@@ -160,8 +161,17 @@ yearSlider.oninput = function () {
 }; // Change cursor when hovering on a fire
 
 
-map.on('mouseenter', 'fire-data', function () {
+map.on('mouseenter', 'fire-data', function (e) {
   map.getCanvas().style.cursor = 'pointer';
+  var fireID = e.features[0].id;
+  console.log(fireID, e);
+  map.setFeatureState({
+    source: 'fire-tiles',
+    "sourceLayer": "Fire_perimeters_20002018",
+    id: fireID
+  }, {
+    hover: true
+  });
 }); // Change it back on mouse leave
 
 map.on('mouseleave', 'fire-data', function () {

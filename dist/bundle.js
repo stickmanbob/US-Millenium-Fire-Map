@@ -137,10 +137,10 @@ map.on('load', function () {
     'source': 'fire-tiles',
     "source-layer": "Fire_perimeters_20002018",
     "type": "fill",
+    // "#e38885"
     "paint": {
-      "fill-color": "#e38885"
-    } // filter: ['==', ['number', ['get', 'fireyear']], 2018]
-
+      "fill-color": ['case', ['boolean', ['feature-state', 'hover'], false], '#df4572', "#e38885"]
+    }
   });
 }); //Initialize the slider
 
@@ -158,24 +158,36 @@ yearSlider.oninput = function () {
     sliderPos.innerHTML = this.value;
     map.setFilter('fire-data', ['==', ['number', ['get', 'fireyear']], Number.parseInt(this.value)]);
   }
-}; // Change cursor when hovering on a fire
+}; // Change cursor and add hover effect when hovering on a fire
+// selectedFireId keeps track of currently hovered fire so we can deselect later
 
 
+var selectedFireId;
 map.on('mouseenter', 'fire-data', function (e) {
-  map.getCanvas().style.cursor = 'pointer';
-  var fireID = e.features[0].id;
-  console.log(fireID, e);
+  map.getCanvas().style.cursor = 'pointer'; // Add hover effect to current feature
+
+  selectedFireId = e.features[0].id;
   map.setFeatureState({
     source: 'fire-tiles',
     "sourceLayer": "Fire_perimeters_20002018",
-    id: fireID
+    id: selectedFireId
   }, {
     hover: true
   });
-}); // Change it back on mouse leave
+}); // Change both back on mouse leave
 
 map.on('mouseleave', 'fire-data', function () {
   map.getCanvas().style.cursor = '';
+
+  if (selectedFireId) {
+    map.setFeatureState({
+      source: 'fire-tiles',
+      "sourceLayer": "Fire_perimeters_20002018",
+      id: selectedFireId
+    }, {
+      hover: false
+    });
+  }
 }); // Display a popup when a fire is clicked on
 
 map.on("click", "fire-data", function (e) {

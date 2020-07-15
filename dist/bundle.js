@@ -194,7 +194,10 @@ map.on("click", "fire-data", function (e) {
   var name = e.features[0].properties.incidentna;
   var acres = Number.parseInt(e.features[0].properties.gisacres).toLocaleString();
   var agency = e.features[0].properties.agency;
-  new mapboxgl.Popup().setLngLat(e.lngLat).setHTML("<span> <strong>Incident Name:</strong> ".concat(name, " </span>\n                    <span> <strong>Acres: </strong> ").concat(acres, " </span>\n                    <span> <strong>Agency:</strong> ").concat(agency, " </span>")).addTo(map);
+  var year = e.features[0].properties.fireyear;
+  var fireid = e.features[0].properties.uniquefire;
+  console.log(e.features[0]);
+  new mapboxgl.Popup().setLngLat(e.lngLat).setHTML("<span> <strong>Incident Name:</strong> ".concat(name, " </span>\n                    <span> <strong>Fire ID:</strong> ").concat(fireid, " </span>\n                    <span> <strong>Acres: </strong> ").concat(acres, " </span>\n                    <span> <strong>Agency:</strong> ").concat(agency, " </span>\n                    <span> <strong>Year:</strong> ").concat(year, " </span>")).addTo(map);
 }); // Test function to log map center and zoom on zoom change 
 
 map.on("zoomend", function () {

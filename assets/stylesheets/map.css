@@ -1,14 +1,32 @@
+body{
+    font-family: sans-serif; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #map {
     height: 700px;
     width: 100%px;
 }
 
 .main-content{
-    padding: 10px 30px;
+
+    width: 80%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+
 }
 
-.map-content-container {
+.map-content-container{
     display: flex;
+    padding: 20px 30px;
+    background-color: #343332;
+    border-radius: 5px;
+    color:white;
+    width: 100%;
 }
 
 .map-sidebar{

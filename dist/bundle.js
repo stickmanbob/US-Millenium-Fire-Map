@@ -117,13 +117,15 @@ __webpack_require__.r(__webpack_exports__);
 var mapboxgl = __webpack_require__(/*! mapbox-gl/dist/mapbox-gl.js */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
 
 mapboxgl.accessToken = _keys__WEBPACK_IMPORTED_MODULE_0__["default"].mapbox;
-var map;
+var map; // Init the map
+
 map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/light-v10',
-  center: [-101.7076442768971, 39.74201539821678],
-  zoom: 3.5
-});
+  center: [-99.81800785622892, 38.583524031549416],
+  zoom: 3.9122929526635173
+}); //Add the fire tiles
+
 map.on('load', function () {
   map.addSource('fire-tiles', {
     type: 'vector',
@@ -139,10 +141,12 @@ map.on('load', function () {
     } // filter: ['==', ['number', ['get', 'fireyear']], 2018]
 
   });
-});
+}); //Initialize the slider
+
 var yearSlider = document.getElementById("yearSlider");
 var sliderPos = document.getElementById("sliderPos");
-sliderPos.innerHTML = "All Years";
+sliderPos.innerHTML = "All Years"; // Filter fires when the slider is moved
+// The leftmost position is for year "1999", which shows all fires (No actual data for 1999)
 
 yearSlider.oninput = function () {
   if (this.value === "1999") {
@@ -169,11 +173,12 @@ map.on("click", "fire-data", function (e) {
   var acres = Number.parseInt(e.features[0].properties.gisacres).toLocaleString();
   var agency = e.features[0].properties.agency;
   new mapboxgl.Popup().setLngLat(e.lngLat).setHTML("<span> <strong>Incident Name:</strong> ".concat(name, " </span>\n                    <span> <strong>Acres: </strong> ").concat(acres, " </span>\n                    <span> <strong>Agency:</strong> ").concat(agency, " </span>")).addTo(map);
-}); //  // Test function to log map center and zoom on zoom change 
-// map.on("zoomend",function() {
-//     console.log("zoom", map.getZoom()); 
-//     console.log("center", map.getCenter())
-// })
+}); // Test function to log map center and zoom on zoom change 
+
+map.on("zoomend", function () {
+  console.log("zoom", map.getZoom());
+  console.log("center", map.getCenter());
+});
 
 /***/ }),
 

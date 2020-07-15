@@ -124,7 +124,8 @@ map = new mapboxgl.Map({
   style: 'mapbox://styles/mapbox/light-v10',
   center: [-99.81800785622892, 38.583524031549416],
   zoom: 3.9122929526635173
-}); //Add the fire tiles
+});
+map.addControl(new mapboxgl.NavigationControl()); //Add the fire tiles
 
 map.on('load', function () {
   map.addSource('fire-tiles', {

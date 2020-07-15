@@ -110,8 +110,22 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../keys */ "./keys.js");
+/* harmony import */ var _map_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./map.js */ "./lib/map.js");
 //Index file
+
+
+/***/ }),
+
+/***/ "./lib/map.js":
+/*!********************!*\
+  !*** ./lib/map.js ***!
+  \********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../keys */ "./keys.js");
 
 
 var mapboxgl = __webpack_require__(/*! mapbox-gl/dist/mapbox-gl.js */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
@@ -140,7 +154,8 @@ map.on('load', function () {
     "type": "fill",
     // "#e38885"
     "paint": {
-      "fill-color": ['case', ['boolean', ['feature-state', 'hover'], false], '#df4572', "#e38885"]
+      "fill-color": ['case', ['boolean', ['feature-state', 'hover'], false], '#df4572', "#e38885"],
+      "fill-opacity": 0.5
     }
   });
 }); //Initialize the slider
@@ -204,7 +219,7 @@ map.on("click", "fire-data", function (e) {
 map.on("zoomend", function () {
   console.log("zoom", map.getZoom());
   console.log("center", map.getCenter());
-});
+}); //Collapse the sidebar
 
 /***/ }),
 

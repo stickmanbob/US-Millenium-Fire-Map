@@ -162,12 +162,12 @@ map.on('load', function () {
 
 var yearSlider = document.getElementById("yearSlider");
 var sliderPos = document.getElementById("sliderPos");
-sliderPos.innerHTML = "All Years"; // Filter fires when the slider is moved
+sliderPos.innerHTML = "All Years (2000-2018)"; // Filter fires when the slider is moved
 // The leftmost position is for year "1999", which shows all fires (No actual data for 1999)
 
 yearSlider.oninput = function () {
   if (this.value === "1999") {
-    sliderPos.innerHTML = "All Years";
+    sliderPos.innerHTML = "All Years (2000-2018)";
     map.setFilter('fire-data', null);
     console.log("set");
   } else {

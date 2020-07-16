@@ -14,7 +14,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%; }
+  width: 100%;
+  height: 700px; }
 
 strong {
   font-weight: 700; }
@@ -33,10 +34,11 @@ header {
 
 .map-container {
   width: 100%;
+  height: 100%;
   position: relative; }
 
 #map {
-  height: 700px;
+  height: 100%;
   width: 100%; }
 
 .slidecontainer {

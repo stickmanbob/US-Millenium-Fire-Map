@@ -11,6 +11,13 @@ body{
     margin-bottom: 300px;
 }
 
+#header-map{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 strong{
     font-weight: 700;
 }
@@ -20,6 +27,17 @@ header{
     width: 80%;
     color: white;
     margin-bottom: 10px;
+
+    h1{
+        font-size: 36px;
+        font-weight: 700;
+        padding: 5px 0px;
+    }
+
+    p{
+        font-size: 14px;
+
+    }
 }
 
 
@@ -27,6 +45,14 @@ header{
     width: 100%;
     position: relative;
 
+}
+
+@media screen and (min-width: 480px) {
+    .map-container{
+        width: 90%;
+        position: relative;
+
+    }
 }
 
 #map {
@@ -37,6 +63,7 @@ header{
 .slidecontainer{
     position: absolute;
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     align-items: center;
     top: 10px;
@@ -61,8 +88,19 @@ header{
 
     .slider{
         width:90%;
+        -webkit-appearance: none; 
     }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: red;
+    }
+
 }
+
 
 .mapboxgl-popup-content {
     display: flex;

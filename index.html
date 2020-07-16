@@ -12,18 +12,23 @@
 </head>
 <body>
     
-    <header>
-        <h1>Fire in the New Millenium</h1>
-        <span>A visualization of large wildfires in the US from 2000-2018</span>
-    </header>
-            
-            <div class="map-container">
-                <div class="slidecontainer">
-                    <input type="range" min="1999" max="2018" value="1999" class="slider" id="yearSlider">
-                    <h3>Year: <span id="sliderPos"></span></h3>
-                </div>
-                <div id="map"> </div>
+    <section id="header-map">
+
+        
+        <header>
+            <h1>Fire in the New Millenium</h1>
+            <span>A visualization of large wildfires in the US from 2000-2018</span>
+        </header>
+                
+        <div class="map-container">
+            <div class="slidecontainer">
+                <input type="range" min="1999" max="2018" value="1999" class="slider" id="yearSlider">
+                <h3>Year: <span id="sliderPos"></span></h3>
             </div>
+            <div id="map"> </div>
+        </div>
+
+    </section>
         
     
 </body>

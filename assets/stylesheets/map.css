@@ -8,7 +8,7 @@ body {
   background-color: darkgrey;
   background-blend-mode: darken;
   background-size: cover;
-  margin-bottom: 300px; }
+  margin-bottom: 100px; }
 
 #header-map {
   display: flex;
@@ -28,7 +28,12 @@ header {
     font-size: 36px;
     font-weight: 700;
     padding: 5px 0px; }
-  header p {
+  @media screen and (max-width: 479px) {
+    header h1 {
+      font-size: 20px; }
+    header span {
+      font-size: 10px; } }
+  header span {
     font-size: 14px; }
 
 .map-container {

@@ -8,7 +8,7 @@ body{
     background-color: darkgrey;
     background-blend-mode: darken;
     background-size: cover;
-    margin-bottom: 300px;
+    margin-bottom: 100px;
 }
 
 #header-map{
@@ -35,7 +35,17 @@ header{
         padding: 5px 0px;
     }
 
-    p{
+    @media screen and (max-width: 479px) {
+        h1{
+            font-size: 20px;
+        }
+
+        span{
+            font-size: 10px
+        }
+    }
+
+    span{
         font-size: 14px;
 
     }

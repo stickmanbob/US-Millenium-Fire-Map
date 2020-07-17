@@ -35,20 +35,22 @@ header{
         padding: 5px 0px;
     }
 
+    span{
+        font-size: 14px;
+
+    }
+
+
     @media screen and (max-width: 479px) {
         h1{
             font-size: 20px;
         }
 
         span{
-            font-size: 10px
+            font-size: 12px
         }
     }
 
-    span{
-        font-size: 14px;
-
-    }
 }
 
 

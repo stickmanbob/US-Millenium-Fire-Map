@@ -3,7 +3,7 @@
 Ever since the destructive Camp fire of 2018 in Paradise, CA, wildland fires have been in the spotlight of public interest in a way they never have before. Where in the US do these fires occur the most? And how has fire changed throughout the millenium? 
 As we enter what many believe to be a new age of wildland fire, with fires getting larger and more intense than ever, it will be important to be able to visualize and analyze fire data to monitor changing trends and predict where fires will occur next.
 
-##About
+## About
 
 This visualization displays an interactive map of all major wildland fires recorded by the National Interagency Fire Center from the year 2000 until 2018 (complete data is not yet availible for 2019). The map and fires are displayed via the Mapbox API and a custom vector tileset made using QGis and [this dataset](https://data-nifc.opendata.arcgis.com/datasets/us-hist-fire-perimtrs-2000-2018-dd83) from NIFC. Fires can be displayed by year using the slider, or viewed all at once. Fires can be clicked on to display more information about them, including the incident code, year, and acreage. 
 

@@ -135,7 +135,8 @@ var mapboxgl = __webpack_require__(/*! mapbox-gl/dist/mapbox-gl.js */ "./node_mo
 
 mapboxgl.accessToken = _keys__WEBPACK_IMPORTED_MODULE_0__["default"].mapbox; // Init the map variable
 
-var map; // Array of all features and data
+var map;
+var tilesLoaded = false; // Array of all features and data
 
 var fireData; // Init the map
 
@@ -164,6 +165,13 @@ map.on('load', function () {
       "fill-opacity": 0.5
     }
   });
+}); // Once the stuff is loaded, initialize the info box with data
+
+map.on("idle", function () {
+  if (!tilesLoaded) {
+    updateInfoBox(map);
+    tilesLoaded = true;
+  }
 }); //Initialize the slider
 
 var yearSlider = document.getElementById("yearSlider");
@@ -240,7 +248,7 @@ map.on("click", "fire-data", function (e) {
 function updateInfoBox(map, year) {
   var data;
 
-  if (year === "all") {
+  if (year === "all" || year === undefined) {
     data = map.querySourceFeatures('fire-tiles', {
       sourceLayer: "Fire_perimeters_20002018"
     });

@@ -8,7 +8,29 @@ body {
   background-color: darkgrey;
   background-blend-mode: darken;
   background-size: cover;
-  margin-bottom: 100px; }
+  padding-bottom: 100px;
+  position: relative; }
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #343332;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white; }
+  footer h3 {
+    font-size: 14px; }
+  footer nav {
+    margin-top: 5px; }
+    footer nav .fa {
+      font-size: 30px; }
+    footer nav a {
+      color: white;
+      margin: 0px 5px; }
 
 #header-map {
   display: flex;
@@ -28,13 +50,13 @@ header {
     font-size: 36px;
     font-weight: 700;
     padding: 5px 0px; }
+  header span {
+    font-size: 14px; }
   @media screen and (max-width: 479px) {
     header h1 {
       font-size: 20px; }
     header span {
-      font-size: 10px; } }
-  header span {
-    font-size: 14px; }
+      font-size: 12px; } }
 
 .map-container {
   width: 100%;

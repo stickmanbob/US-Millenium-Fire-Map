@@ -258,7 +258,7 @@ function updateInfoBox(map, year) {
   var totalFires = data.length;
   var acresBox = document.getElementById("fire-area");
   var firesBox = document.getElementById("total-fires");
-  acresBox.innerHTML = acres;
+  acresBox.innerHTML = acres.toLocaleString();
   firesBox.innerHTML = totalFires;
 } // // Test function to log map center and zoom on zoom change 
 // map.on("zoomend", function () {

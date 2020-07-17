@@ -128,13 +128,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../keys */ "./keys.js");
 
 var headerMap = document.getElementById("header-map");
-headerMap.style.height = window.innerHeight;
-console.log(headerMap.style.height);
+headerMap.style.height = "".concat(window.innerHeight, "px");
+console.log(headerMap.style);
 
 var mapboxgl = __webpack_require__(/*! mapbox-gl/dist/mapbox-gl.js */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
 
 mapboxgl.accessToken = _keys__WEBPACK_IMPORTED_MODULE_0__["default"].mapbox;
-var map; // Init the map
+var map; // Array of all features and data
+
+var fireData; // Init the map
 
 map = new mapboxgl.Map({
   container: 'map',
@@ -172,10 +174,11 @@ yearSlider.oninput = function () {
   if (this.value === "1999") {
     sliderPos.innerHTML = "All Years (2000-2018)";
     map.setFilter('fire-data', null);
-    console.log("set");
+    updateInfoBox(map, "all");
   } else {
     sliderPos.innerHTML = this.value;
     map.setFilter('fire-data', ['==', ['number', ['get', 'fireyear']], Number.parseInt(this.value)]);
+    updateInfoBox(map, Number.parseInt(this.value));
   }
 }; // Change cursor and add hover effect when hovering on a fire
 // selectedFireId keeps track of currently hovered fire so we can deselect later
@@ -230,7 +233,32 @@ map.on("click", "fire-data", function (e) {
   var year = e.features[e.features.length - 1].properties.fireyear;
   var fireid = e.features[e.features.length - 1].properties.uniquefire;
   new mapboxgl.Popup().setLngLat(e.lngLat).setHTML("<span> <strong>Incident Name:</strong> ".concat(name, " </span>\n                    <span> <strong>Fire ID:</strong> ").concat(fireid, " </span>\n                    <span> <strong>Acres: </strong> ").concat(acres, " </span>\n                    <span> <strong>Agency:</strong> ").concat(agency, " </span>\n                    <span> <strong>Year:</strong> ").concat(year, " </span>")).addTo(map);
-}); // // Test function to log map center and zoom on zoom change 
+}); // Get map layer data and update info box
+// TODO - add memoization to make this more efficient (currently queries data on every slider move)
+
+function updateInfoBox(map, year) {
+  var data;
+
+  if (year === "all") {
+    data = map.querySourceFeatures('fire-tiles', {
+      sourceLayer: "Fire_perimeters_20002018"
+    });
+  } else {
+    data = map.querySourceFeatures('fire-tiles', {
+      sourceLayer: "Fire_perimeters_20002018",
+      filter: ['==', ['number', ['get', 'fireyear']], year]
+    });
+  }
+
+  var acres = data.map(function (datum) {
+    return Number.parseInt(datum.properties.gisacres);
+  });
+  var sum = 0;
+  acres.forEach(function (datum) {
+    return sum += datum;
+  });
+  console.log(sum);
+} // // Test function to log map center and zoom on zoom change 
 // map.on("zoomend", function () {
 //     console.log("zoom", map.getZoom());
 //     console.log("center", map.getCenter())

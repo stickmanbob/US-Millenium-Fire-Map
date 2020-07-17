@@ -126,14 +126,15 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../keys */ "./keys.js");
+ // Set the map and header to take up the whole page
 
 var headerMap = document.getElementById("header-map");
-headerMap.style.height = "".concat(window.innerHeight, "px");
-console.log(headerMap.style);
+headerMap.style.height = "".concat(window.innerHeight, "px"); // Import mapbox and the API key
 
 var mapboxgl = __webpack_require__(/*! mapbox-gl/dist/mapbox-gl.js */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
 
-mapboxgl.accessToken = _keys__WEBPACK_IMPORTED_MODULE_0__["default"].mapbox;
+mapboxgl.accessToken = _keys__WEBPACK_IMPORTED_MODULE_0__["default"].mapbox; // Init the map variable
+
 var map; // Array of all features and data
 
 var fireData; // Init the map
@@ -250,14 +251,15 @@ function updateInfoBox(map, year) {
     });
   }
 
-  var acres = data.map(function (datum) {
-    return Number.parseInt(datum.properties.gisacres);
+  var acres = 0;
+  data.forEach(function (datum) {
+    return acres += Number.parseInt(datum.properties.gisacres);
   });
-  var sum = 0;
-  acres.forEach(function (datum) {
-    return sum += datum;
-  });
-  console.log(sum);
+  var totalFires = data.length;
+  var acresBox = document.getElementById("fire-area");
+  var firesBox = document.getElementById("total-fires");
+  acresBox.innerHTML = acres;
+  firesBox.innerHTML = totalFires;
 } // // Test function to log map center and zoom on zoom change 
 // map.on("zoomend", function () {
 //     console.log("zoom", map.getZoom());

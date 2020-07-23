@@ -91,11 +91,16 @@ header {
   background-color: #343332; }
   @media screen and (max-width: 479px) {
     .help {
-      display: none; } }
+      bottom: 40px; } }
   .help #help-button {
     font-size: 40px;
     color: white;
     padding: 5px 15px; }
+    @media screen and (max-width: 479px) {
+      .help #help-button {
+        font-size: 30px;
+        color: white;
+        padding: 3px 8px; } }
   .help #help-button:hover {
     cursor: pointer; }
   .help #help-button.fa-times-circle {

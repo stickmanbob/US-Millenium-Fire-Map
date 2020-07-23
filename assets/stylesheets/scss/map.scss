@@ -116,10 +116,6 @@ header{
 }
 
 .help{
-    @media screen and (max-width: 479px) {
-        display: none;        
-    }
-
     display: flex;
 
     flex-direction: column;
@@ -129,7 +125,9 @@ header{
     bottom: 30px;
 
     right: 10px; 
-
+    @media screen and (max-width:479px) {
+        bottom: 40px; 
+    }
     z-index: 1;
 
     border-radius: 5px;
@@ -140,7 +138,14 @@ header{
         font-size: 40px;
         color: white; 
         padding: 5px 15px; 
+        
+        @media screen and (max-width: 479px) {
+                font-size: 30px;
+                color: white; 
+                padding: 3px 8px;   
+        }
     }
+    
     #help-button:hover{
         cursor: pointer;
     }

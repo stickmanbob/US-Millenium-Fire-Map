@@ -120,23 +120,58 @@ header{
         display: none;        
     }
 
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
     position: absolute;
 
-    bottom: 20px;
+    bottom: 30px;
 
     right: 10px; 
 
     z-index: 1;
+
+    border-radius: 5px;
+
+    background-color: #343332;
+
+    #help-button {
+        font-size: 40px;
+        color: white; 
+        padding: 5px 15px; 
+    }
+    #help-button:hover{
+        cursor: pointer;
+    }
+    #help-button.fa-times-circle{
+        align-self: flex-end;
+        font-size: 20px;
+        padding:0px;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
 
     #instructions{
         display:none;
     }
 
     #instructions.show{
-        display: inline;
+        display: block;
+        color:white; 
+        width: 300px;
+
+        font-size: 14px;
+
+        text-align: center;
+
+        padding: 5px;
+        padding-top: 0px;
+
     }
 
 }
+
 
 @media screen and (min-width: 480px) {
     .map-container{

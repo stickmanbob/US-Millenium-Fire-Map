@@ -130,6 +130,7 @@ header{
     }
     z-index: 1;
 
+    border: 1px solid black; 
     border-radius: 5px;
 
     background-color: #343332;
@@ -177,6 +178,16 @@ header{
 
 }
 
+    .info-box{
+        padding: 5px 10px;
+        border: 1px solid black;
+        background-color: #343332;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+        line-height: 25px;
+    }
+
 
 @media screen and (min-width: 480px) {
     .map-container{
@@ -191,15 +202,15 @@ header{
         top:20px;
     }
 
-    .info-box{
-        padding: 5px 10px;
-        border: 1px solid black;
-        background-color: #343332;
-        border-radius: 5px;
-        color: white;
-        font-size: 16px;
-        line-height: 25px;
-    }
+    // .info-box{
+    //     padding: 5px 10px;
+    //     border: 1px solid black;
+    //     background-color: #343332;
+    //     border-radius: 5px;
+    //     color: white;
+    //     font-size: 16px;
+    //     line-height: 25px;
+    // }
 }
 
 

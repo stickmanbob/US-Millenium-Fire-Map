@@ -113,6 +113,19 @@ header {
   flex-direction: column;
   font-size: 16px; }
 
+.help {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  z-index: 1; }
+  @media screen and (max-width: 479px) {
+    .help {
+      display: none; } }
+  .help #instructions {
+    display: none; }
+  .help #instructions.show {
+    display: inline; }
+
 @media screen and (min-width: 480px) {
   .map-container {
     width: 90%;

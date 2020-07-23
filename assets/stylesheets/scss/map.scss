@@ -115,6 +115,29 @@ header{
     font-size: 16px;
 }
 
+.help{
+    @media screen and (max-width: 479px) {
+        display: none;        
+    }
+
+    position: absolute;
+
+    bottom: 20px;
+
+    right: 10px; 
+
+    z-index: 1;
+
+    #instructions{
+        display:none;
+    }
+
+    #instructions.show{
+        display: inline;
+    }
+
+}
+
 @media screen and (min-width: 480px) {
     .map-container{
         width: 90%;

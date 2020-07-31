@@ -87,12 +87,20 @@ header{
         margin-bottom: 10px;
         width:90%;
         -webkit-appearance: none; 
+        cursor: pointer;
     }
 
     .slider::-webkit-slider-runnable-track{
         height: 3px;
         background-image: linear-gradient(0deg,#a5a5a5,#c4c4c4);
     }
+
+    .slider::-moz-range-track{
+        height: 3px;
+        background-image: linear-gradient(0deg,#a5a5a5,#c4c4c4);
+        
+    }
+
 
     .slider::-webkit-slider-thumb {
         -webkit-appearance: none;

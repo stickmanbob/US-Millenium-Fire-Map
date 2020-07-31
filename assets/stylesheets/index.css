@@ -92,8 +92,12 @@ header {
     margin: 8px 0px;
     margin-bottom: 10px;
     width: 90%;
-    -webkit-appearance: none; }
+    -webkit-appearance: none;
+    cursor: pointer; }
   .slidecontainer .slider::-webkit-slider-runnable-track {
+    height: 3px;
+    background-image: linear-gradient(0deg, #a5a5a5, #c4c4c4); }
+  .slidecontainer .slider::-moz-range-track {
     height: 3px;
     background-image: linear-gradient(0deg, #a5a5a5, #c4c4c4); }
   .slidecontainer .slider::-webkit-slider-thumb {

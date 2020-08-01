@@ -5,7 +5,7 @@ Live Link: https://stickmanbob.github.io/US-Millenium-Fire-Map/
 Ever since the destructive Camp fire of 2018 in Paradise, CA, wildland fires have been in the spotlight of public interest in a way they never have before. Where in the US do these fires occur the most? And how has fire changed throughout the new millenium? 
 As we enter what many believe to be a new age of wildland fire, with fires getting larger and more intense than ever, it will be important to be able to visualize and analyze fire data to monitor changing trends and predict where fires will occur next.
 
-<img src="./assets/Images/Screenshot.png"/>
+<img src="./assets/Images/FireMap.gif"/>
 
 ## About
 

@@ -183,3 +183,10 @@ header {
   flex-direction: column;
   color: black;
   font-size: 13px; }
+
+section.graphs {
+  width: 100%; }
+
+#graph {
+  width: 90%;
+  height: 600px; }

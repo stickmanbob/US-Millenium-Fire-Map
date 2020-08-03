@@ -185,7 +185,10 @@ header {
   font-size: 13px; }
 
 section.graphs {
-  width: 100%; }
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 #graph {
   width: 90%;

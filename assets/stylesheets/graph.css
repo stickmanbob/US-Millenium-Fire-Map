@@ -1,0 +1,9 @@
+section.graphs {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+#graph {
+  width: 90%;
+  height: 600px; }

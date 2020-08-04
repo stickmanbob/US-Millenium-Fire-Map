@@ -9,9 +9,10 @@ strong {
 
 header {
   text-align: center;
-  width: 80%;
+  width: 100%;
   color: white;
-  margin: 10px 0px; }
+  margin-bottom: 10px;
+  background-color: #343332; }
   header h1 {
     font-size: 36px;
     font-weight: 700;
@@ -19,10 +20,12 @@ header {
   header span {
     font-size: 16px; }
   @media screen and (max-width: 479px) {
-    header h1 {
-      font-size: 20px; }
-    header span {
-      font-size: 12px; } }
+    header {
+      margin-bottom: 0px; }
+      header h1 {
+        font-size: 20px; }
+      header span {
+        font-size: 12px; } }
 
 .map-container {
   width: 100%;

@@ -3,7 +3,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a6/The_Rim_Fire_in_the_Stanislaus_National_Forest_near_in_California_began_on_Aug._17%2C_2013-0004.jpg);
+  background-image: url("../../assets/Images/Nate.jpg");
   background-repeat: no-repeat;
   background-color: darkgrey;
   background-blend-mode: darken;
@@ -59,9 +59,10 @@ strong {
 
 header {
   text-align: center;
-  width: 80%;
+  width: 100%;
   color: white;
-  margin: 10px 0px; }
+  margin-bottom: 10px;
+  background-color: #343332; }
   header h1 {
     font-size: 36px;
     font-weight: 700;
@@ -69,10 +70,12 @@ header {
   header span {
     font-size: 16px; }
   @media screen and (max-width: 479px) {
-    header h1 {
-      font-size: 20px; }
-    header span {
-      font-size: 12px; } }
+    header {
+      margin-bottom: 0px; }
+      header h1 {
+        font-size: 20px; }
+      header span {
+        font-size: 12px; } }
 
 .map-container {
   width: 100%;

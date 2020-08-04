@@ -61,22 +61,25 @@
     <section class="graphs">
         <h2>Summary</h2>
         
-        <div class="selectors">
-            <label for="ySelect">Y-Axis</label>
-            <select value="Fires" id="ySelect">
-                <option value="Fires">Fires</option>
-                <option value="Acres">Acres</option>
-            </select>
+        <div class="graph-controls">
+            <div class="selectors">
+                <label for="ySelect">Y-Axis</label>
+                <select value="Fires" id="ySelect">
+                    <option value="Fires">Fires</option>
+                    <option value="Acres">Acres</option>
+                </select>
 
-            <label for="xSelect">X-Axis</label>
-            <select value="Year" id="xSelect">
-                <option value="Year">All Years</option>
-                <option value="Agency"> Agency</option>
-            </select>
+                <label for="xSelect">X-Axis</label>
+                <select value="Year" id="xSelect">
+                    <option value="Year">All Years</option>
+                    <option value="Agency"> Agency</option>
+                </select>
+            </div>
+
+            <button id="graphSubmit">Graph!</button>
         </div>
-        
 
-        <button id="graphSubmit">Graph!</button>
+
         <svg id="graph" width="900" height="600"></svg>
     </section>
 

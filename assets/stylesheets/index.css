@@ -185,9 +185,8 @@ header {
   font-size: 13px; }
 
 section.graphs {
-  width: 90%;
   position: relative;
-  padding: 15px 20px;
+  padding: 15px 40px;
   background-color: #343332;
   border-radius: 5px;
   display: flex;
@@ -200,6 +199,14 @@ section.graphs {
     color: white;
     font-weight: 600;
     margin-bottom: 10px; }
+  section.graphs .graph-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; }
+  @media screen and (max-width: 479px) {
+    section.graphs {
+      display: none; } }
 
 #graph {
   background-color: white;

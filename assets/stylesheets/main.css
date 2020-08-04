@@ -31,3 +31,19 @@ footer {
     footer nav a {
       color: white;
       margin: 0px 5px; }
+
+h2 {
+  font-size: 32px;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 10px; }
+
+section.content {
+  padding: 15px 20px;
+  background-color: #343332;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  color: white; }

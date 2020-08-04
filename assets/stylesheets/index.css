@@ -32,6 +32,22 @@ footer {
       color: white;
       margin: 0px 5px; }
 
+h2 {
+  font-size: 32px;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 10px; }
+
+section.content {
+  padding: 15px 20px;
+  background-color: #343332;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  color: white; }
+
 #header-map {
   display: flex;
   flex-direction: column;
@@ -186,19 +202,7 @@ header {
 
 section.graphs {
   position: relative;
-  padding: 15px 40px;
-  background-color: #343332;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 30px;
-  color: white; }
-  section.graphs h2 {
-    font-size: 32px;
-    color: white;
-    font-weight: 600;
-    margin-bottom: 10px; }
+  padding: 15px 40px; }
   section.graphs .graph-controls {
     display: flex;
     flex-direction: column;
@@ -218,3 +222,10 @@ section.graphs {
     font-size: 14px; }
   #graph text.axis-label {
     font-size: 24px; }
+
+.about {
+  width: 90%; }
+  .about p {
+    line-height: 20px; }
+    .about p a {
+      color: white; }

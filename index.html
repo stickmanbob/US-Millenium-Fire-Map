@@ -59,12 +59,23 @@
     </section>
 
     <section class="graphs">
-        <h2>Aggregation</h2>
-        <select id="chartSelect">
-            <option value="num">Num Fires</option>
-            <option value="acres">Acres</option>
-            <option value="agency">Agencies</option>
-        </select>
+        <h2>Summary</h2>
+        
+        <div class="selectors">
+            <label for="ySelect">Y-Axis</label>
+            <select id="ySelect">
+                <option value="numFires">Fires</option>
+                <option value="numAcres">Acres</option>
+            </select>
+
+            <label for="xSelect">X-Axis</label>
+            <select id="xSelect">
+                <option value="agency"> Agency</option>
+                <option value="allYears">All Years</option>
+            </select>
+        </div>
+        
+
         <button id="graphSubmit">Graph!</button>
         <svg id="graph" width="800" height="600"></svg>
     </section>

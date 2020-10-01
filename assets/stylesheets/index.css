@@ -233,6 +233,10 @@ section.graphs {
     .about p a {
       color: white; }
 
+@media (max-width: 479px) {
+  #selectButtons {
+    display: none; } }
+
 #map-container {
   display: none; }
 

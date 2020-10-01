@@ -1,3 +1,9 @@
+#selectButtons{
+    @media (max-width: 479px) {
+        display: none;
+    }
+}
+
 #map-container{
     display: none;
 }

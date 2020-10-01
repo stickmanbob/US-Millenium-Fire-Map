@@ -61,33 +61,35 @@
             
         </div>
 
-    </section>
-
-    <section class="graphs content">
-        <h2>Summary</h2>
+        <section class="graphs content" id="graphs">
+            <h2>Summary</h2>
         
-        <div class="graph-controls">
-            <div class="selectors">
-                <label for="ySelect">Y-Axis</label>
-                <select value="Fires" id="ySelect">
-                    <option value="Number of Fires">Number of Fires</option>
-                    <option value="Number of Acres">Number of Acres</option>
-                </select>
-
-                <label for="xSelect">X-Axis</label>
-                <select value="Year" id="xSelect">
-                    <option value="Year">All Years</option>
-                    <option value="Top 6 Agencies"> Agency</option>
-                    <option value="Top 15 States">State</option>
-                </select>
+            <div class="graph-controls">
+                <div class="selectors">
+                    <label for="ySelect">Y-Axis</label>
+                    <select value="Fires" id="ySelect">
+                        <option value="Number of Fires">Number of Fires</option>
+                        <option value="Number of Acres">Number of Acres</option>
+                    </select>
+        
+                    <label for="xSelect">X-Axis</label>
+                    <select value="Year" id="xSelect">
+                        <option value="Year">All Years</option>
+                        <option value="Top 6 Agencies"> Agency</option>
+                        <option value="Top 15 States">State</option>
+                    </select>
+                </div>
+        
+                <button id="graphSubmit">Graph!</button>
             </div>
+        
+        
+            <svg id="graph" width="900" height="600"></svg>
+        </section>
 
-            <button id="graphSubmit">Graph!</button>
-        </div>
-
-
-        <svg id="graph" width="900" height="600"></svg>
     </section>
+
+    
 
     <section class="content about">
         <h2>About this Dataset</h2>

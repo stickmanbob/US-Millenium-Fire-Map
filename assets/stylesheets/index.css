@@ -238,3 +238,9 @@ section.graphs {
 
 #map-container.display {
   display: flex; }
+
+#graphs {
+  display: none; }
+
+#graphs.display {
+  display: flex; }

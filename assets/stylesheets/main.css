@@ -3,7 +3,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("../../assets/Images/Nate.jpg");
+  background-image: url("../../assets/Images/background.jpg");
   background-repeat: no-repeat;
   background-color: darkgrey;
   background-blend-mode: darken;

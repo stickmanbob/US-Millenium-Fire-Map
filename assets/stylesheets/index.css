@@ -3,7 +3,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("../../assets/Images/Nate.jpg");
+  background-image: url("../../assets/Images/background.jpg");
   background-repeat: no-repeat;
   background-color: darkgrey;
   background-blend-mode: darken;
@@ -232,3 +232,21 @@ section.graphs {
     line-height: 20px; }
     .about p a {
       color: white; }
+
+#selectButtons {
+  margin-bottom: 5px; }
+  @media (max-width: 479px) {
+    #selectButtons {
+      display: none; } }
+  #selectButtons button {
+    padding: 5px 10px;
+    background-color: #343332;
+    color: white;
+    border-radius: 5px;
+    width: 100px; }
+
+#map-container, #graphs {
+  display: none; }
+
+#map-container.display, #graphs.display {
+  display: flex; }

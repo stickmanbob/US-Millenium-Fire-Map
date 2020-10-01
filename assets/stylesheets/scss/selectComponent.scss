@@ -1,0 +1,33 @@
+#selectButtons{
+
+    // Don't show buttons on mobile (map only)
+    @media (max-width: 479px) {
+        display: none;
+    }
+
+    button{
+
+        padding: 5px 10px;
+
+        background-color: #343332;
+
+        color: white;
+
+        border-radius: 5px;
+
+        width: 100px; 
+
+    }
+
+    margin-bottom: 5px;
+}
+
+// Default to not displaying data components
+#map-container, #graphs{
+    display: none;
+}
+
+// Display a data component when it has class "display" (given by event handler)
+#map-container.display, #graphs.display{
+    display: flex;
+}

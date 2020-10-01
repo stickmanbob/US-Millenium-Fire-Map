@@ -233,9 +233,17 @@ section.graphs {
     .about p a {
       color: white; }
 
-@media (max-width: 479px) {
-  #selectButtons {
-    display: none; } }
+#selectButtons {
+  margin-bottom: 5px; }
+  @media (max-width: 479px) {
+    #selectButtons {
+      display: none; } }
+  #selectButtons button {
+    padding: 5px 10px;
+    background-color: #343332;
+    color: white;
+    border-radius: 5px;
+    width: 100px; }
 
 #map-container {
   display: none; }

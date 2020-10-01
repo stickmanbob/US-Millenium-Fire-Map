@@ -2,6 +2,22 @@
     @media (max-width: 479px) {
         display: none;
     }
+
+    button{
+
+        padding: 5px 10px;
+
+        background-color: #343332;
+
+        color: white;
+
+        border-radius: 5px;
+
+        width: 100px; 
+
+    }
+
+    margin-bottom: 5px;
 }
 
 #map-container{

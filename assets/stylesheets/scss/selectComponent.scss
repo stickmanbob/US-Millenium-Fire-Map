@@ -1,4 +1,6 @@
 #selectButtons{
+
+    // Don't show buttons on mobile (map only)
     @media (max-width: 479px) {
         display: none;
     }
@@ -20,18 +22,12 @@
     margin-bottom: 5px;
 }
 
-#map-container{
+// Default to not displaying data components
+#map-container, #graphs{
     display: none;
 }
 
-#map-container.display{
-    display: flex;
-}
-
-#graphs{
-    display: none;
-}
-
-#graphs.display{
+// Display a data component when it has class "display" (given by event handler)
+#map-container.display, #graphs.display{
     display: flex;
 }

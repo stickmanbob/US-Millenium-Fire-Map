@@ -245,14 +245,8 @@ section.graphs {
     border-radius: 5px;
     width: 100px; }
 
-#map-container {
+#map-container, #graphs {
   display: none; }
 
-#map-container.display {
-  display: flex; }
-
-#graphs {
-  display: none; }
-
-#graphs.display {
+#map-container.display, #graphs.display {
   display: flex; }
